@@ -1,0 +1,21 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -Iinclude
+SRC = src/main.c src/snake.c src/food.c src/score.c src/display.c
+OBJDIR = build
+OBJ = $(patsubst src/%.c,$(OBJDIR)/%.o,$(SRC))
+TARGET = snakec
+
+$(TARGET): $(OBJ)
+	$(CC) $(OBJ) -o $(TARGET)
+
+$(OBJDIR)/%.o: src/%.c | $(OBJDIR)
+	$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJDIR):
+	mkdir -p $(OBJDIR)
+
+run: $(TARGET)
+	./$(TARGET)
+
+clean:
+	rm -rf $(OBJDIR) $(TARGET)
