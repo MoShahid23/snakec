@@ -1,8 +1,6 @@
 #ifndef SCORE_H
 #define SCORE_H
 
-#include "food.h"
-
 typedef struct {
     int score;
     int high_score;
@@ -11,6 +9,6 @@ typedef struct {
 //always initialize score to 0
 void score_init(Score *score);
 //update score based on food eaten
-void score_update(Score *score, const Food *food);
+void score_update(Score *score, int value);
 
 #endif

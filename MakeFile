@@ -1,6 +1,6 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Iinclude
-SRC = src/main.c src/snake.c src/food.c src/score.c src/display.c
+SRC = src/main.c src/snake.c src/food.c src/score.c src/display.c src/controller.c
 OBJDIR = build
 OBJ = $(patsubst src/%.c,$(OBJDIR)/%.o,$(SRC))
 TARGET = snakec
